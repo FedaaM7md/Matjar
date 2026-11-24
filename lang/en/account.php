@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'title' => 'My account',
+    'eyebrow' => 'Customer account',
+    'greeting' => 'Welcome, :name',
+    'recent_orders' => 'Recent orders',
+    'no_orders' => 'No orders yet. Start shopping from the store.',
+    'details' => 'Account details',
+    'edit_profile' => 'Edit account',
+    'password_optional_hint' => 'Leave the password blank to keep it unchanged.',
+    'profile_updated' => 'Your account has been updated.',
+    'stats_orders' => 'Total orders',
+    'stats_active' => 'In progress',
+    'stats_spent' => 'Total paid',
+    'orders_title' => 'My orders',
+    'orders_subtitle' => 'Follow order statuses and invoices in one place.',
+    'filter_label' => 'Filter orders',
+    'filter_all' => 'All',
+    'order_number' => 'Order number',
+    'date' => 'Date',
+    'items_count' => 'Items',
+    'items_choice' => '[0]No items|[1]1 item|[2,*]:count items',
+    'total' => 'Total',
+    'view' => 'View order',
+    'no_orders_filtered' => 'No orders with this status',
+    'no_orders_filtered_hint' => 'Try another status or start a new order.',
+];

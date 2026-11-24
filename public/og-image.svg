@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Qoton — everyday Egyptian clothing">
+  <rect width="1200" height="630" fill="#111111"/>
+  <circle cx="980" cy="120" r="260" fill="#E63B2E" fill-opacity="0.18"/>
+  <circle cx="140" cy="560" r="200" fill="#ffffff" fill-opacity="0.05"/>
+  <g fill="none" stroke="#F4F1EC" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M150 250 L230 286 L310 250 L410 300 L382 390 L338 372 L338 560 Q338 580 318 580 L162 580 Q142 580 142 560 L142 372 L98 390 L70 300 Z"/>
+    <path d="M196 270 Q230 312 264 270"/>
+  </g>
+  <rect x="198" y="470" width="56" height="34" fill="#E63B2E"/>
+  <text x="470" y="300" font-family="Rubik, 'Segoe UI', Arial, sans-serif" font-size="120" font-weight="800" fill="#FFFFFF">Qoton</text>
+  <text x="470" y="390" font-family="'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="76" font-weight="700" fill="#F4F1EC" direction="rtl">قُطن — ملابس يومية مصرية</text>
+  <text x="470" y="460" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-weight="600" fill="#D6D4D2">Everyday Wear — Cairo</text>
+</svg>

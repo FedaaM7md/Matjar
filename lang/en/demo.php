@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'badge' => 'Demo mode',
+    'banner' => 'Demo mode — data resets automatically. Do not enter real data.',
+    'banner_short' => 'Demo account — data resets automatically.',
+    'launch' => 'Try the demo',
+    'launch_hint' => 'Instant access, no details to type.',
+    'title' => 'Enter the demo',
+    'subtitle' => 'Pick a role to go straight into the store or the admin panel. No email or password needed.',
+    'choose_role' => 'Choose a role',
+    'role_admin' => 'Admin',
+    'role_admin_desc' => 'Full management: products, orders, shipping, reports.',
+    'role_staff' => 'Staff',
+    'role_staff_desc' => 'Operational access: orders, inventory and catalog.',
+    'role_customer' => 'Customer',
+    'role_customer_desc' => 'The storefront as a customer: cart, checkout and order history.',
+    'enter_as' => 'Continue as :role',
+    'note' => 'A shared demo account. Email and password cannot be changed, and the data resets automatically every hour.',
+    'signed_in' => 'You entered the demo as :role.',
+    'off' => 'The demo is not enabled on this site.',
+    'back_home' => 'Back to the store',
+    'restricted' => 'This action is not available on the demo account.',
+    'reset_done' => 'The demo data has been reset.',
+    'upload_limit' => 'In demo mode the maximum image size is :mb MB.',
+];

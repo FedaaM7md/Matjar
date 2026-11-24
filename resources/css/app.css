@@ -1,0 +1,295 @@
+@import 'tailwindcss';
+
+/* Matjar — © 2026 Fedaa Mohamed. All rights reserved. Proprietary. */
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+/*
+ * Matjar design tokens (see docs/BRAND.md).
+ *
+ * The palette is intentionally high-contrast and editorial: near-black ink,
+ * pure white, tomato red as the single accent, warm grey for paper surfaces,
+ * and a price green reserved for money and success states. Corners are sharp
+ * (0–4px) — no pill badges, no glass, no gradients.
+ */
+@theme {
+    --font-sans: 'Noto Sans Arabic Variable', 'Segoe UI', Tahoma, system-ui, sans-serif;
+    --font-display: 'Rubik Variable', 'Noto Sans Arabic Variable', system-ui, sans-serif;
+    --font-mono: ui-monospace, 'Cascadia Mono', 'Consolas', monospace;
+
+    /* Ink — the near-black ramp used for `brand-*` classes. */
+    --color-brand-50: #f6f5f4;
+    --color-brand-100: #ecebea;
+    --color-brand-200: #d6d4d2;
+    --color-brand-300: #b3b0ad;
+    --color-brand-400: #8a8682;
+    --color-brand-500: #64615e;
+    --color-brand-600: #494744;
+    --color-brand-700: #2b2927;
+    --color-brand-800: #1d1c1b;
+    --color-brand-900: #111111;
+    --color-brand-950: #0a0a0a;
+
+    /* Tomato red — the one accent. */
+    --color-accent-50: #fef2f0;
+    --color-accent-100: #fde5e0;
+    --color-accent-200: #fbc9c0;
+    --color-accent-300: #f7a398;
+    --color-accent-400: #ef6f63;
+    --color-accent-500: #e63b2e;
+    --color-accent-600: #c92f24;
+    --color-accent-700: #a8271e;
+    --color-accent-800: #8a221b;
+    --color-accent-900: #722119;
+
+    /* Price / success green. */
+    --color-price-50: #ecf6f0;
+    --color-price-100: #d3ece0;
+    --color-price-500: #1d7a4f;
+    --color-price-600: #176742;
+    --color-price-700: #125238;
+
+    /* Warm paper grey. */
+    --color-paper: #edeae6;
+
+    /* Remap Tailwind's cool `slate` neutrals to warm greys so leftover
+       slate-* utilities across the app match the editorial palette. */
+    --color-slate-50: #f6f5f4;
+    --color-slate-100: #ecebe9;
+    --color-slate-200: #ddd9d4;
+    --color-slate-300: #c4bfb8;
+    --color-slate-400: #9a948b;
+    --color-slate-500: #6f6961;
+    --color-slate-600: #575149;
+    --color-slate-700: #423d36;
+    --color-slate-800: #2c2823;
+    --color-slate-900: #1b1815;
+    --color-slate-950: #0f0d0b;
+
+    --shadow-soft: 0 1px 2px rgb(10 10 10 / 0.08);
+    --radius-soft: 0;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        @apply bg-white text-stone-800 antialiased;
+        font-feature-settings: 'kern';
+        font-size: 16px;
+    }
+
+    /*
+     * Arabic text must never carry letter-spacing: it loosens the joins.
+     * Tracking is reserved for Latin text (which uses dir="ltr").
+     */
+    [dir='rtl'],
+    [dir='rtl'] * {
+        letter-spacing: 0 !important;
+    }
+
+    h1, h2, h3, h4 {
+        @apply text-brand-950;
+        font-family: var(--font-display);
+        text-wrap: balance;
+    }
+
+    :focus-visible {
+        @apply outline-2 outline-offset-2 outline-accent-500;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+
+    ::selection {
+        @apply bg-accent-500 text-white;
+    }
+}
+
+@layer components {
+    .container-page {
+        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+
+    .btn,
+    .btn-primary,
+    .btn-accent,
+    .btn-outline,
+    .btn-ghost,
+    .btn-danger {
+        @apply inline-flex items-center justify-center gap-2 rounded-none px-5 py-2.5 text-sm font-bold transition duration-150 disabled:cursor-not-allowed disabled:opacity-50;
+        font-family: var(--font-display);
+    }
+
+    .btn-primary {
+        @apply bg-brand-900 text-white hover:bg-brand-800 active:bg-brand-950;
+    }
+
+    .btn-accent {
+        @apply bg-accent-500 text-white hover:bg-accent-600 active:bg-accent-700;
+    }
+
+    .btn-outline {
+        @apply border border-stone-300 bg-white text-stone-800 hover:border-brand-900 hover:bg-brand-900 hover:text-white;
+    }
+
+    .btn-ghost {
+        @apply text-stone-700 hover:bg-paper hover:text-brand-950;
+    }
+
+    .btn-danger {
+        @apply bg-accent-600 text-white hover:bg-accent-700;
+    }
+
+    .btn-sm {
+        @apply px-3 py-1.5 text-xs;
+    }
+
+    .btn-lg {
+        @apply px-7 py-3.5 text-base;
+    }
+
+    .label {
+        @apply mb-1.5 block text-sm font-bold text-stone-700;
+    }
+
+    .input {
+        @apply block min-h-11 w-full rounded-none border border-stone-300 bg-white px-4 py-2.5 text-sm text-brand-950 shadow-none transition placeholder:text-stone-400 focus:border-brand-900 focus:ring-2 focus:ring-brand-900/10 focus:outline-none disabled:bg-paper;
+    }
+
+    .input-error {
+        @apply border-accent-600 focus:border-accent-600 focus:ring-accent-500/10;
+    }
+
+    .card {
+        @apply rounded-none border border-stone-200 bg-white;
+    }
+
+    .badge,
+    .badge-neutral,
+    .badge-success,
+    .badge-warning,
+    .badge-danger,
+    .badge-info {
+        @apply inline-flex items-center gap-1.5 rounded-none border px-2.5 py-1 text-xs font-bold;
+    }
+
+    .badge-neutral {
+        @apply border-stone-300 bg-stone-100 text-stone-700;
+    }
+
+    .badge-success {
+        @apply border-price-500/25 bg-price-50 text-price-700;
+    }
+
+    .badge-warning {
+        @apply border-amber-300 bg-amber-50 text-amber-900;
+    }
+
+    .badge-danger {
+        @apply border-accent-500/30 bg-accent-50 text-accent-700;
+    }
+
+    .badge-info {
+        @apply border-brand-300 bg-brand-50 text-brand-900;
+    }
+
+    .table-wrap {
+        @apply overflow-x-auto rounded-none border border-stone-200 bg-white;
+    }
+
+    .table-base {
+        @apply w-full border-collapse text-start text-sm;
+    }
+
+    .table-base thead th {
+        @apply whitespace-nowrap border-b border-stone-200 bg-paper px-4 py-3 text-start text-xs font-bold text-stone-600;
+    }
+
+    .table-base tbody td {
+        @apply border-b border-stone-100 px-4 py-3 align-middle;
+    }
+
+    .link {
+        @apply font-bold text-brand-900 underline-offset-4 hover:text-accent-600 hover:underline;
+    }
+
+    .section-title {
+        @apply text-2xl font-extrabold text-brand-950 sm:text-3xl;
+        font-family: var(--font-display);
+    }
+
+    .eyebrow {
+        @apply inline-flex items-center gap-2 text-xs font-bold text-accent-600;
+    }
+
+    .eyebrow::before {
+        content: '';
+        @apply h-px w-6 bg-accent-500;
+    }
+
+    [dir='rtl'] .eyebrow::before {
+        @apply order-2;
+    }
+
+    .admin-nav-link {
+        @apply flex items-center gap-3 rounded-none border-s-2 border-transparent px-3 py-2.5 text-sm font-bold text-stone-300 transition hover:bg-white/10 hover:text-white;
+    }
+
+    .admin-nav-link-active {
+        @apply border-accent-500 bg-white/10 text-white;
+    }
+
+    .prose-ar a {
+        @apply font-bold text-brand-900 underline-offset-4 hover:text-accent-600 hover:underline;
+    }
+
+    .admin-sidebar {
+        transform: translateX(-100%);
+    }
+
+    [dir='rtl'] .admin-sidebar {
+        transform: translateX(100%);
+    }
+
+    .admin-sidebar.is-open {
+        transform: translateX(0);
+    }
+
+    @media (min-width: 1024px) {
+        .admin-sidebar,
+        [dir='rtl'] .admin-sidebar {
+            transform: none;
+        }
+    }
+
+    /* Tabular numerals for money and order codes. */
+    .num {
+        font-variant-numeric: tabular-nums lining-nums;
+    }
+
+    /* Comfortable 44px tap targets on phones. */
+    @media (max-width: 640px) {
+        .btn,
+        .btn-sm,
+        .btn-lg {
+            min-height: 2.75rem;
+        }
+    }
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: #fff !important;
+    }
+}

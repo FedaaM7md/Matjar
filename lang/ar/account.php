@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'title' => 'حسابي',
+    'eyebrow' => 'حساب العميل',
+    'greeting' => 'أهلًا، :name',
+    'recent_orders' => 'أحدث الطلبات',
+    'no_orders' => 'لا توجد طلبات بعد. ابدأ التسوق من المتجر.',
+    'details' => 'بيانات الحساب',
+    'edit_profile' => 'تعديل بيانات الحساب',
+    'password_optional_hint' => 'اترك كلمة المرور فارغة لعدم تغييرها.',
+    'profile_updated' => 'تم تحديث بيانات الحساب.',
+    'stats_orders' => 'إجمالي الطلبات',
+    'stats_active' => 'طلبات قيد التنفيذ',
+    'stats_spent' => 'إجمالي المدفوع',
+    'orders_title' => 'طلباتي',
+    'orders_subtitle' => 'تابع حالة طلباتك وفواتيرك من مكان واحد.',
+    'filter_label' => 'تصفية الطلبات',
+    'filter_all' => 'الكل',
+    'order_number' => 'رقم الطلب',
+    'date' => 'التاريخ',
+    'items_count' => 'القطع',
+    'items_choice' => '[0]لا توجد قطع|[1]قطعة واحدة|[2,10]:count قطع|[11,*]:count قطعة',
+    'total' => 'الإجمالي',
+    'view' => 'عرض الطلب',
+    'no_orders_filtered' => 'لا توجد طلبات بهذه الحالة',
+    'no_orders_filtered_hint' => 'جرّب حالة أخرى أو ابدأ طلبًا جديدًا.',
+];
